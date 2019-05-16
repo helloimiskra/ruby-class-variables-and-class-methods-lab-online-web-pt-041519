@@ -27,14 +27,11 @@ class Song
   end
 
   def self.genre_count
-    #@@genres.group_by(&:itself).map { |k,v| [k, v.count] }.to_h
     @@genres.uniq.map {|genre| [genre, @@genres.count(genre)]}.to_h
   end
 
   def self.artist_count
     @@artists.uniq.map {|artist| [artist, @@artists.count(artist)]}.to_h
-      #@@artists.group_by(&:itself).map { |k,v| [k, v.count] }.to_h
   end
-
 
 end
